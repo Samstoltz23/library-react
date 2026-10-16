@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from 'fortawesome/fontawesome-svg-core';
+import { faBars } from 'fortAwesome/free-solid-svg-icons';
 
 const Nav = () => {
   return (
@@ -17,7 +19,7 @@ const Nav = () => {
             Books
           </li>
           <button className="btn__menu">
-            <FontAwesomeIcon icon="bars" />
+            <FontAwesomeIcon icon={faBars} />
           </button>
         </ul>
       </div>
