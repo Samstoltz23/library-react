@@ -2,16 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
   faBars, 
   faShoppingCart,
   faTimes,
   faBolt,
   faBookOpen,
-  faTags
+  faTags,
+  faStar, 
+  faStarHalfAlt
 } from "@fortawesome/free-solid-svg-icons";
+import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 library.add(
@@ -20,7 +21,9 @@ library.add(
   faTimes,
   faBolt,
   faBookOpen,
-  faTags
+  faTags,
+  faStar,
+  faStarHalfAlt
 )
 
 
