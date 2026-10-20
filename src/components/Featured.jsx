@@ -5,8 +5,7 @@ import { books } from '../data';
 
 const Featured = () => {
   console.log(books);
-  console.log(books.filter(Book) => Book.rating === 5).slice(0, 4);
-  function getFiveStarBooks() {}
+  const fiveStarBooks = books.filter((book) => book.rating === 5).slice(0,4);
   return(
     <div>
       <section id="featured">
@@ -16,16 +15,18 @@ const Featured = () => {
               Featured <span className="purple">Books</span>
             </h2>
             <div className="books">
-              <Book />
-              <Book />
-              <Book />
-              <Book />
+              {books
+                .filter((book) => book.rating === 5)
+                .slice(0, 4)
+                .map(book => (
+                <Book book={book} key={book.id}/>
+              ))}
             </div>
           </div>
         </div>
       </section>
     </div>
   );
-}
+};
 
 export default Featured;
