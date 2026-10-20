@@ -1,8 +1,12 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Book from './ui/Book';
+import { books } from '../data';
 
 
 const Featured = () => {
+  console.log(books);
+  console.log(books.filter(Book) => Book.rating === 5).slice(0, 4);
+  function getFiveStarBooks() {}
   return(
     <div>
       <section id="featured">
@@ -12,6 +16,9 @@ const Featured = () => {
               Featured <span className="purple">Books</span>
             </h2>
             <div className="books">
+              <Book />
+              <Book />
+              <Book />
               <Book />
             </div>
           </div>
