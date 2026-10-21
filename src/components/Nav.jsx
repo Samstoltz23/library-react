@@ -5,6 +5,13 @@ import { faBars, faShoppingCart, faTimes } from "@fortawesome/free-solid-svg-ico
 
 
 const Nav = () => {
+  function openMenu() {
+    document.body.classList += " menu--open";
+  }
+
+  function closeMenu() {
+    document.body.classList.remove("menu--open");
+  }
   return (
     <nav>
       <div className="nav__container">
@@ -20,7 +27,7 @@ const Nav = () => {
             <a href="/" className="nav__link" />
             Books
           </li>
-          <button className="btn__menu">
+          <button className="btn__menu" onClick={openMenu}>
             <FontAwesomeIcon icon={faBars} />
           </button>
           <li className="nav__icon">
@@ -31,7 +38,7 @@ const Nav = () => {
           </li>
         </ul>
         <div className="menu__backdrop">
-          <button className="btn__menu btn__menu--close">
+          <button className="btn__menu btn__menu--close" onClick={closeMenu}>
             <FontAwesomeIcon icon={faTimes} />
           </button>
           <ul className="menu__links">
