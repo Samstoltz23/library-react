@@ -2,6 +2,7 @@ import React from 'react';
 import LibraryLogo from '../assets/Library.svg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faShoppingCart, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 
 const Nav = () => {

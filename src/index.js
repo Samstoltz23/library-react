@@ -10,7 +10,8 @@ import {
   faBookOpen,
   faTags,
   faStar, 
-  faStarHalfAlt
+  faStarHalfAlt, 
+  faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -23,7 +24,8 @@ library.add(
   faBookOpen,
   faTags,
   faStar,
-  faStarHalfAlt
+  faStarHalfAlt,
+  faArrowLeft
 )
 
 
