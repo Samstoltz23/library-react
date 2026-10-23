@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
@@ -19,7 +19,7 @@ const BookInfo = ({ books }) => {
           <div className="row">
             <div className="books__selected--top">
               <Link to="/books" className="book__link">
-                <FontAwesomeIcon icon="arrow__left" />
+                <FontAwesomeIcon icon="arrow-left" />
               </Link>
               <Link to="/books" className="book__link">
                 <h2 className="book__selected--title--top">Books</h2>
