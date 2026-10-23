@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
@@ -8,6 +8,9 @@ import Book from "../components/ui/Book";
 const BookInfo = ({ books }) => {
   const { id } = useParams();
   const book = books.find((book) => +book.id === +id);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   return (
     <div id="books__body">
@@ -66,7 +69,7 @@ const BookInfo = ({ books }) => {
               {books
                 .filter((book) => book.rating === 5 && +book.id !== +id)
                 .slice(0, 4)
-                .map((books) => (
+                .map((book) => (
                   <Book book={book} key={book.id} />
                 ))}
             </div>
