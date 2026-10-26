@@ -4,14 +4,12 @@ import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
 import Book from "../components/ui/Book";
 import React, { useEffect, useState } from "react";
-import Cart from "./Cart";
 
-const BookInfo = ({ books, addToCart }) => {
+const BookInfo = ({ books, cart, addToCart }) => {
   const { id } = useParams();
   const book = books.find((book) => +book.id === +id);
   const [added, setAdded] = useState(false);
 
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
@@ -21,7 +19,8 @@ const BookInfo = ({ books, addToCart }) => {
   }
 
   function bookExistsOnCart() {
-    return Cart.find(book => book.id === +id);
+    return cart.find((book) => 
+      book.id === +id);
   }
 
   return (
@@ -74,7 +73,7 @@ const BookInfo = ({ books, addToCart }) => {
                 ) : (
                   <button className="btn" onClick={() => addBookToCart(book)}>
                     Add to Cart
-                  </button>  
+                  </button>
                 )}
               </div>
             </div>
