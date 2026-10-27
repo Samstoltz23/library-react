@@ -771,9 +771,26 @@ select {
   font-size: 16px;
   padding: 12px 0;
 }
+.cart__layout{
+  display:flex;
+  flex-wrap:wrap;
+  align-items: flex-start;
+  padding:0 24px;
+}
+
+.cart__layout .cart__title{
+  width:100%;
+  font-size:32px;
+  margin-bottom:16px;
+}
 
 .cart{
-  width:100%;
+  flex:1;
+  min-width:0;
+}
+
+.cart__layout .total{
+  flex:0 0 300px;
 }
 
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import EmptyCart from "../assets/empty_cart.svg";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Cart = ({ cart, changeQuantity, removeItem }) => {
   const total = () => {
@@ -15,7 +15,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
       <div className="books__main">
         <div className="books__container">
           <div className="row">
-            <div className="book__selected--top">
+            <div className="cart__layout">
               <div className="cart__title">Cart</div>
               <div className="cart">
                 <div className="cart__header">
@@ -35,7 +35,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                             <span className="cart__book--title">
                               {book.title}
                             </span>
-                            <span className="cart__book-price">
+                            <span className="cart__book--price">
                               $
                               {(book.salePrice || book.originalPrice).toFixed(
                                 2,
@@ -84,7 +84,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
               </div>
               {cart.length > 0 && (
                 <div className="total">
-                  <div className="total__item total__sub-title">
+                  <div className="total__item total__sub-total">
                     <span>Subtotal</span>
                     <span>${(total() * 0.9).toFixed(2)}</span>
                   </div>
