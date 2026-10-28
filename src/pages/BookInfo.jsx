@@ -3,12 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
 import Book from "../components/ui/Book";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const BookInfo = ({ books, cart, addToCart }) => {
   const { id } = useParams();
   const book = books.find((book) => +book.id === +id);
-  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
