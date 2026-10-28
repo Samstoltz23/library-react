@@ -1,8 +1,14 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Explore = () => {
-  return(
+  const { books } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [books]);
+
+  return (
     <section id="explore">
       <div className="container">
         <div className="row row__column">
@@ -16,6 +22,6 @@ const Explore = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Explore;
