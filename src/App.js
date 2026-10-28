@@ -7,36 +7,37 @@ import Books from "./pages/Books";
 import { books } from "./data";
 import BookInfo from "./pages/BookInfo";
 import Cart from "./pages/Cart";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 function App() {
   const [cart, setCart] = useState([]);
 
   function addToCart(book) {
-    setCart([...cart, {...book, quantity: 1}]);
+    setCart([...cart, { ...book, quantity: 1 }]);
   }
 
-  function  changeQuantity(book, quantity){
+  function changeQuantity(book, quantity) {
     setCart(
-      cart.map((item) => 
+      cart.map((item) =>
         item.id === book.id
-        ? {
-            ...item,
-           quantity: +quantity,
-          }
-        : item
-      )
-    )
+          ? {
+              ...item,
+              quantity: +quantity,
+            }
+          : item,
+      ),
+    );
   }
 
   function removeItem(item) {
-    setCart(cart.filter(book => book.id !== item.id))
+    setCart(cart.filter((book) => book.id !== item.id));
   }
 
-  function numberOfItems (){
+  function numberOfItems() {
     let counter = 0;
-    cart.forEach(item => {
-      counter += item.quantity
-    })
+    cart.forEach((item) => {
+      counter += item.quantity;
+    });
     return counter;
   }
 
@@ -46,6 +47,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Nav numberOfItems={numberOfItems()} />
         <Route path="/" exact component={Home} />
@@ -53,18 +55,19 @@ function App() {
         <Route
           path="/books/:id"
           render={() => (
-            <BookInfo books={books} cart={cart} addToCart={addToCart}/>
+            <BookInfo books={books} cart={cart} addToCart={addToCart} />
           )}
-         /> 
-        <Route 
-          path="/cart" 
+        />
+        <Route
+          path="/cart"
           render={() => (
-            <Cart 
-              books={books} 
-              cart={cart} 
-              changeQuantity={changeQuantity} removeItem={removeItem}
+            <Cart
+              books={books}
+              cart={cart}
+              changeQuantity={changeQuantity}
+              removeItem={removeItem}
             />
-          )} 
+          )}
         />
         <Footer />
       </div>

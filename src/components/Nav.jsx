@@ -1,11 +1,14 @@
-import React from 'react';
-import LibraryLogo from '../assets/Library.svg';
+import React from "react";
+import LibraryLogo from "../assets/Library.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faShoppingCart, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faShoppingCart,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-
-const Nav = ({numberOfItems}) => {
+const Nav = ({ numberOfItems }) => {
   function openMenu() {
     document.body.classList += " menu--open";
   }
@@ -21,10 +24,14 @@ const Nav = ({numberOfItems}) => {
         </Link>
         <ul className="nav__links">
           <li className="nav__list">
-            <Link to="/" className="nav__link">Home</Link>
+            <Link to="/" className="nav__link">
+              Home
+            </Link>
           </li>
           <li className="nav__list">
-            <Link to="/books" className="nav__link">Books</Link>
+            <Link to="/books" className="nav__link">
+              Books
+            </Link>
           </li>
           <button className="btn__menu" onClick={openMenu}>
             <FontAwesomeIcon icon={faBars} />
@@ -33,9 +40,9 @@ const Nav = ({numberOfItems}) => {
             <Link to="/cart" className="nav__link">
               <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
-            {
-              numberOfItems > 0 && <span className="cart-length">{numberOfItems}</span>
-            }
+            {numberOfItems > 0 && (
+              <span className="cart-length">{numberOfItems}</span>
+            )}
           </li>
         </ul>
         <div className="menu__backdrop">
@@ -44,17 +51,17 @@ const Nav = ({numberOfItems}) => {
           </button>
           <ul className="menu__links">
             <li className="menu__list">
-              <Link to="/" className="menu__link">
+              <Link to="/" className="menu__link" onClick={closeMenu}>
                 Home
               </Link>
             </li>
             <li className="menu__list">
-              <Link to="/books" className="menu__link">
+              <Link to="/books" className="menu__link" onClick={closeMenu}>
                 Books
               </Link>
             </li>
             <li className="menu__list">
-              <Link to="/cart" className="menu__link">
+              <Link to="/cart" className="menu__link" onClick={closeMenu}>
                 Cart
               </Link>
             </li>
@@ -62,9 +69,7 @@ const Nav = ({numberOfItems}) => {
         </div>
       </div>
     </nav>
-  )
-    
-  
-}
+  );
+};
 
 export default Nav;
